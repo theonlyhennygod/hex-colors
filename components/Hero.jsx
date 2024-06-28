@@ -8,6 +8,15 @@ const Hero = () => {
   const [hslValues, setHslValues] = useState({ h: 0, s: 0, l: 50, a: 1 });
   const [colorScales, setColorScales] = useState(colorOptions[0].shades);
 
+  const [isToastVisible, setIsToastVisible] = useState(false);
+
+  const showToast = () => {
+    setIsToastVisible(true);
+    setTimeout(() => {
+      setIsToastVisible(false);
+    }, 3000);
+  };
+
   const handleHSLChange = (e, colorProperty) => {
     const newValue =
       colorProperty === "a"
@@ -33,7 +42,7 @@ const Hero = () => {
     );
     const hexCode = rgbaToHex(r, g, b, a);
     navigator.clipboard.writeText(hexCode);
-    alert("HEX code copied to clipboard: " + hexCode);
+    showToast(); // Show the toast notification
   };
 
   return (
@@ -43,6 +52,11 @@ const Hero = () => {
         backgroundColor: `hsl(${hslValues.h}, ${hslValues.s}%, ${hslValues.l}%)`,
       }}
     >
+      {isToastVisible && (
+        <div className="fixed top-28 left-1/2 transform -translate-x-1/2 bg-green-500 text-white py-2 px-4 rounded">
+          HEX code copied to clipboard!
+        </div>
+      )}
       <h1 className="text-4xl font-bold mb-16 text-white">
         HEX Color Generator
       </h1>

@@ -6,7 +6,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center p-4 bg-gray-800 text-white">
         <Image src="/logo.png" alt="My Logo" width={50} height={50} />
         <a
-          href="https://github.com/theonlyhennygod/pomodoro-timer"
+          href="https://github.com/theonlyhennygod/hex-colors"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center bg-black text-white px-4 py-2 rounded"

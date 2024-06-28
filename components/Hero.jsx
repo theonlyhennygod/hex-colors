@@ -57,7 +57,7 @@ const Hero = () => {
           HEX code copied to clipboard!
         </div>
       )}
-      <h1 className="text-4xl font-bold mb-16 text-white">
+      <h1 className="text-5xl font-bold mb-16 text-white">
         HEX Color Generator
       </h1>
       <p className="mb-24 text-white">
@@ -91,7 +91,7 @@ const Hero = () => {
       </div>
       <button
         onClick={handleCopy}
-        className="bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded"
+        className="bg-black hover:bg-gray-900 text-white font-bold mt-16 py-2 px-4 rounded"
       >
         Copy Color
       </button>
